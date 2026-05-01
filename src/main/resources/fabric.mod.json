@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "mcbash",
+  "version": "${version}",
+
+  "name": "MCBash",
+  "description": "",
+  "authors": [],
+  "contact": {},
+
+  "license": "MIT",
+  "icon": "assets/mcbash/icon.png",
+
+  "environment": "client",
+  "entrypoints": {
+    "client": ["org.mcbash.client.McbashClient"],
+    "main": ["org.mcbash.Mcbash"]
+  },
+
+  "mixins": [
+    "mcbash.mixins.json"
+    ,{
+      "config": "mcbash.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
