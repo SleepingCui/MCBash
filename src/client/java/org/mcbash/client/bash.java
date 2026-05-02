@@ -33,7 +33,6 @@ public class bash {
             if (bashWriter != null && bashProcess != null && bashProcess.isAlive()) {
                 bashWriter.write(input + "\n");
                 bashWriter.flush();
-                print("Input:" + input);
             } else {
                 print("Bash NOT RUNNING");
             }
@@ -44,7 +43,7 @@ public class bash {
 
     public static void startBashProcess() {
         try {
-            ProcessBuilder pb = new ProcessBuilder("/bin/bash", "-i");
+            ProcessBuilder pb = new ProcessBuilder("/bin/bash", "-s");
             pb.redirectErrorStream(true);
             bashProcess = pb.start();
             bashWriter = new BufferedWriter(new OutputStreamWriter(bashProcess.getOutputStream(), StandardCharsets.UTF_8));
